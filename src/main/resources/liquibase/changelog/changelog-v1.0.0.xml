@@ -13,4 +13,15 @@
             </column>
         </createTable>
     </changeSet>
+
+    <changeSet id="v1.0.0-002" author="xyh">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <columnExists tableName="sys_user" columnName="password"/>
+            </not>
+        </preConditions>
+        <addColumn tableName="sys_user">
+            <column name="password" type="varchar(100)" remarks="登录密码"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>
