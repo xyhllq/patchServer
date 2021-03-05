@@ -38,7 +38,6 @@ spring:
         connect-properties:
           config.decrypt: true
           config.decrypt.key: ${spring.datasource.druid.publickey}
-          #MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIqx4I9JfgVuequzw/kO6sSXoDcRxN0JERjPuD50CBkhQCPOGrrIL9ureSV4oBASI8Uy7mxGnkUKSOR8oi2b/r0CAwEAAQ==
         #配置DruidStatFilter
         web-stat-filter:
           enabled: true
