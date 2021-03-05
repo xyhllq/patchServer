@@ -8,10 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 class PatchServerApplicationTests {
 
     @Test
-    void contextLoads() throws Exception {
-        String pasword = "123456789";
-        ConfigTools.main(new String[]{pasword});
-
-
+    void contextLoads(){
     }
 }
