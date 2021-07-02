@@ -14,6 +14,22 @@ import java.util.Map;
  * Description:判断两个值是否相等的规则的 判断器
  */
 public class EqualsRule extends AbstractRule {
+    @Override
+    protected <T> T convert(String value) {
+
+
+
+
+        return super.convert(value);
+    }
+
+    @Override
+    protected <T> boolean executeRule(T t, String rule) {
+        EqualsRuleInfo equalsRuleInfo = JacksonUtil.from(rule,EqualsRuleInfo.class);
+
+
+        return super.executeRule(t, rule);
+    }
 
     /**
      * 判断是否符合
@@ -24,11 +40,10 @@ public class EqualsRule extends AbstractRule {
      * @param key   执行的规则信息
      * @return
      */
-    @Override
+    /*@Override
     public boolean execute(String value, BaseRuleInfo key) {
-        System.out.println("执行的规则名字："+key.getRuleName());
-        System.out.println("执行的规则信息："+key.getRuleInfo());
-        EqualsRuleInfo rule = JacksonUtil.from(key.getRuleInfo(),EqualsRuleInfo.class);
+
+
         //用点分割需要转义
         String[] ruleAddr = rule.getValueAddr().split("\\.",-1);
         //先默认两级尝试一下
@@ -41,5 +56,5 @@ public class EqualsRule extends AbstractRule {
             return false;
         }
         return true;
-    }
+    }*/
 }

@@ -9,25 +9,29 @@ import java.util.Map;
  */
 public abstract class AbstractRule implements BaseRule{
 
-/*    protected <T> T convert(String dto) {
-        return (T) dto;
+    protected <T> T convert(String value) {
+        return (T) value;
     }
 
-    protected <T> boolean executeRule(T t) {
+    protected <T> boolean executeRule(T t,String rule) {
         return true;
-    }*/
+    }
     /**
+     * 这个如果被重写的话，会不输出规则信息
+     *
      * 判断是否符合
      * 符合返回 true
      * 不符合返回 false
      *
      * @param value 用于被规则判断的值
-     * @param key   执行的规则信息
+     * @param rule   执行的规则信息
      * @return
      */
     @Override
-    public boolean execute(String value, BaseRuleInfo key) {
-        return false;
+    public boolean execute(String value, BaseRuleInfo rule) {
+        System.out.println("执行的规则名字："+rule.getRuleName());
+        System.out.println("执行的规则信息："+rule.getRuleInfo());
+        return executeRule(convert(value),rule.getRuleInfo());
     }
 
 

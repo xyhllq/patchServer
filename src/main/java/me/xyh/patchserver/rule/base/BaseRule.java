@@ -13,8 +13,8 @@ public interface BaseRule {
      *  符合返回 true
      *  不符合返回 false
      * @param value 用于被规则判断的值
-     * @param key 执行的规则信息
+     * @param rule 执行的规则信息
      * @return
      */
-    boolean execute(String value,BaseRuleInfo key);
+    boolean execute(String value,BaseRuleInfo rule);
 }
